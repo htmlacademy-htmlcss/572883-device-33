@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
 
     <header class="page-header">
       <nav class="page-header__nav">
-        <a  class="page-header__logo" href="/">
+        <a  class="page-header__logo" href="index.html">
           <img src="images/logo.svg" width="145" height="36" alt="Логотип интернет-магазина Девайс.">
         </a>
 
@@ -55,7 +57,7 @@
 
     <main class="main-inner">
       <header class="main-inner__header">
-        <h1 class="main-inner__title">Моноподы для селфи</h1>
+        <h1 class="main-inner__title main-title">Моноподы для селфи</h1>
 
         <ul class="breadcrumbs">
           <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
@@ -75,7 +77,7 @@
           </fieldset>
 
           <fieldset class="catalog-filter__group">
-            <legend class="catalog-filter__title">Цвет</legend>
+            <legend class="catalog-filter__subtitle">Цвет</legend>
 
             <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-black">Чёрный</label>
             <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-white">Белый</label>
@@ -85,13 +87,13 @@
           </fieldset>
 
           <fieldset class="catalog-filter__group">
-            <legend class="catalog-filter__title">Bluetooth</legend>
+            <legend class="catalog-filter__subtitle">Bluetooth</legend>
 
             <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="yes">Есть</label>
             <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="no">Нет</label>
           </fieldset>
 
-          <button class="catalog-filter__submit" type="submit">Показать</button>
+          <button class="button catalog-filter__submit" type="submit">Показать</button>
         </form>
 
         <div class="catalog-sort">
@@ -112,7 +114,7 @@
             <li class="catalog-products__item">
               <a class="product-card" href="#">
                 <h3 class="product-card__title">Любительская селфи-палка</h3>
-                <img class="product-card__thumb" width="360" height="380" src="images/products/product-1.jpg" alt="">
+                <img class="product-card__thumb" width="360" height="380" src="images/products/product-1.jpg" alt="Любительская селфи-палка">
                 <p class="product-card__price">500 ₽</p>
                 <p class="button product-card__button">Подробнее</p>
               </a>
@@ -120,7 +122,7 @@
             <li class="catalog-products__item">
               <a class="product-card" href="#">
                 <h3 class="product-card__title">Профессиональная селфи-палка</h3>
-                <img class="product-card__thumb" width="360" height="380" src="images/products/product-2.jpg" alt="">
+                <img class="product-card__thumb" width="360" height="380" src="images/products/product-2.jpg" alt="Профессиональная селфи-палка">
                 <p class="product-card__price">1 500 ₽</p>
                 <p class="button product-card__button">Подробнее</p>
               </a>
@@ -128,7 +130,7 @@
             <li class="catalog-products__item">
               <a class="product-card" href="#">
                 <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
-                <img class="product-card__thumb" width="360" height="380" src="images/products/product-3.jpg" alt="">
+                <img class="product-card__thumb" width="360" height="380" src="images/products/product-3.jpg" alt="Непотопляемая селфи-палка">
                 <p class="product-card__price">2 500 ₽</p>
                 <p class="button product-card__button">Подробнее</p>
               </a>
@@ -136,7 +138,7 @@
             <li class="catalog-products__item">
               <a class="product-card" href="#">
                 <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
-                <img class="product-card__thumb" width="360" height="380" src="images/products/product-4.jpg" alt="">
+                <img class="product-card__thumb" width="360" height="380" src="images/products/product-4.jpg" alt="Селфи-палка «Следуй за мной»">
                 <p class="product-card__price">1 500 ₽</p>
                 <p class="button product-card__button">Подробнее</p>
               </a>
@@ -148,7 +150,7 @@
           <ul class="pagination">
             <li class="pagination__prev"><a class="pagination__button" href="#">Назад</a></li>
             <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-            <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+            <li class="pagination__item"><a class="pagination__link pagination__link_curent">2</a></li>
             <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
             <li class="pagination__item">...</li>
             <li class="pagination__item"><a class="pagination__link" href="#">15</a></li>
@@ -159,7 +161,7 @@
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo" href="/">
+      <a class="page-footer__logo" href="index.html">
         <img src="images/logo-footer.svg" width="145" height="36"  alt="Логотип интернет-магазина Девайс.">
       </a>
 
