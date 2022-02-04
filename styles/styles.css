@@ -13,19 +13,33 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/rubik/rubik-800.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
   src: url("../fonts/raleway/raleway-800.woff2") format("woff2");
   font-display: swap;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  color: #444444;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .visually-hidden{
@@ -35,12 +49,9 @@
   display: none; /* Временный стиль */
 }
 
-body{
-  background-color: #f0f0f0;
-  font-family: "Rubik", sans-serif;
-  font-size: 18px;
-  line-height: 30px;
-  color: #444444;
+.container{
+  width: 1160px;
+  margin: 0 auto;
 }
 
 /* Шапка сайта */
@@ -51,6 +62,13 @@ body{
 }
 .page-header__nav{
   background-color: #ffe17f;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.page-header__row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .page-header a{
   color: inherit;
@@ -77,6 +95,17 @@ body{
   font-family: inherit;
 }
 
+/* Шапка сайта > Меню Пользователя */
+
+.user-menu{
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  width: 500px;
+  padding: 0;
+  margin: 0;
+}
+
 /* Шапка сайта > Меню Каталог */
 
 .catalog-menu__toggler{
@@ -91,9 +120,15 @@ body{
   line-height: 18px;
 }
 
-/* Главное меню */
+/* Главное меню, в шапке и в футере */
 
 .main-menu{
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  width: 560px;
+  margin: 0;
+  padding: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   line-height: 21px;
@@ -106,8 +141,12 @@ body{
 
 /* Для всех страниц */
 
+.page-main{
+  flex-grow: 1;
+}
+
 .main-title{
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 50px;
@@ -128,8 +167,6 @@ body{
   text-decoration: none;
 }
 
-
-
 /* Footer */
 
 .page-footer{
@@ -138,9 +175,26 @@ body{
   font-size: 16px;
   line-height: 19px;
 }
-
 .page-footer a{
   color: inherit;
+}
+
+.page-footer__row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-footer__main-menu{
+  justify-content: center;
+}
+
+.page-footer__address,
+.page-footer__phone{
+  width: 250px;
+}
+.page-footer__phone{
+  text-align: right;
 }
 
 /* Главная */
@@ -149,6 +203,16 @@ body{
 
 .home-slider{
   background-color: #ffffff;
+}
+.home-slider__item{
+  display: flex;
+  justify-content: space-between;
+}
+.home-slider__item_hidden{
+  display: none;
+}
+.home-slider__column{
+  width: 560px;
 }
 .home-slider__specifications th{
   font-size: 16px;
@@ -166,11 +230,33 @@ body{
   background-color: #ffffff;
 }
 .category__list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   line-height: 24px;
   letter-spacing: -0.02em;
   color: #000000;
+}
+.category__list a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Главная > Услуги */
+
+.services__container{
+  display: flex;
+  flex-direction: space-between;
+}
+.services__nav{
+  width: 360px;
+}
+.services__list{
+  width: 760px;
 }
 
 /* Главная > Доставим редкий товар */
@@ -179,6 +265,8 @@ body{
   background-color: #ffffff;
 }
 .delivery__button{
+  display: flex;
+  justify-content: center;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 20px;
@@ -195,7 +283,14 @@ body{
 .about-wrap{
   background-color: #ffffff;
 }
+.about-wrap__container{
+  display: flex;
+  justify-content: space-between;
+}
 
+.about{
+  width: 560px;
+}
 .about__list{
   font-weight: bold;
   line-height: 20px;
@@ -205,6 +300,9 @@ body{
 
 /* Главная > Контакты */
 
+.contacts{
+  width: 560px;
+}
 .contacts__subtitle{
   font-weight: bold;
   font-size: 24px;
@@ -219,6 +317,17 @@ body{
 
 /* Главная > Подписка */
 
+.subscription__container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.subscription__column{
+  width: 560px;
+}
+.subscription__full{
+  width: 100%;
+}
 .subscription-form__input{
   background-color: transparent;
   border: none;
@@ -243,13 +352,18 @@ body{
 
 /* Внутренние страницы */
 
-.main-inner__header{
+.main-header{
   background-color: #ffffff;
+}
+.main-header__container{
+  padding: 0 60px;
 }
 
 /* Хлебные крошки */
 
 .breadcrumbs{
+  padding: 0;
+  margin: 0;
   font-size: 16px;
   line-height: 19px;
   color: #000000;
@@ -259,9 +373,18 @@ body{
   color: inherit;
 }
 
+/* Каталог */
+
+.catalog-products__container{
+  display: grid;
+  grid-template-columns: 320px 840px;
+}
+
 /* Каталог > Фильтр */
 
 .catalog-filter{
+  grid-row: 1 / 3;
+  padding: 0 60px;
   color: #000000;
   font-size: 16px;
   line-height: 19px;
@@ -284,6 +407,10 @@ body{
 /* Каталог > Сортировка */
 
 .catalog-sort{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
   color: #000000;
   font-size: 16px;
   line-height: 19px;
@@ -300,10 +427,21 @@ body{
 /* Каталог > Список товаров */
 
 .catalog-products__inner{
+  padding: 0 40px;
   background-color: #ffffff;
 }
 
+.catalog-products__list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
 .catalog-products__more{
+  display: block;
+  width: 100%;
   font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -319,6 +457,7 @@ body{
 /* Каталог > Карточка товара */
 
 .product-card{
+  display: block;
   color: inherit;
   text-decoration: none;
 }
