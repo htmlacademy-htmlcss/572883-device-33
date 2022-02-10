@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-
     <header class="page-header">
       <div class="container">
         <nav class="page-header__nav">
           <div class="page-header__row">
-            <a  class="page-header__logo" href="index.html">
+            <a  class="logo" href="index.html">
               <img src="images/logo.svg" width="145" height="36" alt="Логотип интернет-магазина Девайс.">
             </a>
           </div>
@@ -25,14 +24,16 @@
     
             <ul class="user-menu">
               <li class="user-menu__item user-menu__user">
-                <a class="user-menu__link user-menu__link_user" href="#">Коля Петухов</a>
-                <a class="user-menu__link user-menu__link_logoff" href="#">Выйти</a>
+                <a href="#">Коля Петухов</a>
+              </li>
+              <li class="user-menu__item user-menu__logoff">
+                <a href="#">Выйти</a>
               </li>
               <li class="user-menu__item user-menu__compare">
-                <a class="user-menu__link user-menu__link_compare" href="#">Сравнить</a>
+                <a href="#">Сравнить</a>
               </li>
               <li class="user-menu__item user-menu__cart">
-                <a class="user-menu__link user-menu__link_cart" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="hidden">2</span></a>
+                <a href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span hidden>2</span></a>
               </li>
             </ul>
           </div>
@@ -41,20 +42,20 @@
             <div class="catalog-menu">
               <a class="catalog-menu__toggler" href="catalog.html">Каталог товаров</a>
     
-              <ul class="catalog-menu__list hidden">
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Виртуальная реальность</a></li>
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Моноподы для селфи</a></li>
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Экшн-камеры</a></li>
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Фитнес-браслеты</a></li>
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Умные часы</a></li>
-                <li class="catalog-menu__item"><a class="catalog-menu__link" href="#">Квадрокоптеры</a></li>
+              <ul class="catalog-menu__list" hidden>
+                <li class="catalog-menu__item"><a href="#">Виртуальная реальность</a></li>
+                <li class="catalog-menu__item"><a href="#">Моноподы для селфи</a></li>
+                <li class="catalog-menu__item"><a href="#">Экшн-камеры</a></li>
+                <li class="catalog-menu__item"><a href="#">Фитнес-браслеты</a></li>
+                <li class="catalog-menu__item"><a href="#">Умные часы</a></li>
+                <li class="catalog-menu__item"><a href="#">Квадрокоптеры</a></li>
               </ul>
             </div>
     
-            <ul class="page-header__main-menu main-menu">
-              <li class="main-menu__item"><a class="main-menu__link" href="#">Доставка</a></li>
-              <li class="main-menu__item"><a class="main-menu__link" href="#">Гарантия</a></li>
-              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
+            <ul class="main-menu page-header__main-menu">
+              <li class="main-menu__item"><a href="#">Доставка</a></li>
+              <li class="main-menu__item"><a href="#">Гарантия</a></li>
+              <li class="main-menu__item"><a href="#">Контакты</a></li>
             </ul>
           </div>
         </nav>
@@ -64,12 +65,12 @@
     <main class="page-main">
       <header class="main-header">
         <div class="container main-header__container">
-          <h1 class="main-title">Моноподы для селфи</h1>
+          <h1 class="main-title main-header__title">Моноподы для селфи</h1>
 
           <ul class="breadcrumbs">
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог товаров</a></li>
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link">Моноподы для селфи</a></li>
+            <li class="breadcrumbs__item"><a href="/">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="#">Каталог товаров</a></li>
+            <li class="breadcrumbs__item"><a>Моноподы для селфи</a></li>
           </ul>
         </div>
       </header>
@@ -114,7 +115,7 @@
               <option value="expensive">Сначала дорогие</option>
             </select>
   
-            <div>
+            <div class="catalog-sort__btns">
               <button class="catalog-sort__btn catalog-sort__btn_ascending"><span class="visually-hidden">Отсортировать по возростанию</span></button>
               <button class="catalog-sort__btn catalog-sort__btn_descending"><span class="visually-hidden">Отсортировать по убыванию</span></button>
             </div>
@@ -124,33 +125,41 @@
             <ul class="catalog-products__list">
               <li class="catalog-products__item">
                 <a class="product-card" href="#">
-                  <h3 class="product-card__title">Любительская селфи-палка</h3>
                   <img class="product-card__thumb" width="360" height="380" src="images/products/product-1.jpg" alt="Любительская селфи-палка">
-                  <p class="product-card__price">500 ₽</p>
+                  <div class="product-card__title-wrap">
+                    <h3 class="product-card__title">Любительская<br>селфи-палка</h3>
+                    <p class="product-card__price">500 ₽</p>
+                  </div>
                   <p class="button product-card__button">Подробнее</p>
                 </a>
               </li>
               <li class="catalog-products__item">
                 <a class="product-card" href="#">
-                  <h3 class="product-card__title">Профессиональная селфи-палка</h3>
                   <img class="product-card__thumb" width="360" height="380" src="images/products/product-2.jpg" alt="Профессиональная селфи-палка">
-                  <p class="product-card__price">1 500 ₽</p>
+                  <div class="product-card__title-wrap">
+                    <h3 class="product-card__title">Профессиональная селфи-палка</h3>
+                    <p class="product-card__price">1 500 ₽</p>
+                  </div>
                   <p class="button product-card__button">Подробнее</p>
                 </a>
               </li>
               <li class="catalog-products__item">
                 <a class="product-card" href="#">
-                  <h3 class="product-card__title">Непотопляемая селфи-палка</h3>
                   <img class="product-card__thumb" width="360" height="380" src="images/products/product-3.jpg" alt="Непотопляемая селфи-палка">
-                  <p class="product-card__price">2 500 ₽</p>
+                  <div class="product-card__title-wrap">
+                    <h3 class="product-card__title">Непотопляемая<br>селфи-палка</h3>
+                    <p class="product-card__price">2 500 ₽</p>
+                  </div>
                   <p class="button product-card__button">Подробнее</p>
                 </a>
               </li>
               <li class="catalog-products__item">
                 <a class="product-card" href="#">
-                  <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
                   <img class="product-card__thumb" width="360" height="380" src="images/products/product-4.jpg" alt="Селфи-палка «Следуй за мной»">
-                  <p class="product-card__price">1 500 ₽</p>
+                  <div class="product-card__title-wrap">
+                    <h3 class="product-card__title">Селфи-палка «Следуй за мной»</h3>
+                    <p class="product-card__price">1 500 ₽</p>
+                  </div>
                   <p class="button product-card__button">Подробнее</p>
                 </a>
               </li>
@@ -163,7 +172,7 @@
               <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
               <li class="pagination__item"><a class="pagination__link pagination__link_curent">2</a></li>
               <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-              <li class="pagination__item">...</li>
+              <li class="pagination__item"><span class="pagination__link">...</span></li>
               <li class="pagination__item"><a class="pagination__link" href="#">15</a></li>
               <li class="pagination__next"><a class="pagination__button" href="#">Вперёд</a></li>
             </ul>
@@ -175,12 +184,11 @@
     <footer class="page-footer">
       <div class="container">
         <div class="page-footer__row">
-          <a class="page-footer__logo" href="index.html">
-            <img src="images/logo-footer.svg" width="145" height="36"  alt="Логотип интернет-магазина Девайс.">
+          <a class="logo">
+            <img src="images/logo-footer.svg" width="145" height="36" alt="Логотип интернет-магазина Девайс.">
           </a>
         </div>
         
-  
         <div class="page-footer__row">
           <p class="page-footer__address">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
   
@@ -189,25 +197,25 @@
             <li class="main-menu__item"><a class="main-menu__link" href="#">Гарантия</a></li>
             <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
           </ul>
-    
-          <a class="page-footer__phone" href="tel:+78128121212">Тел.: +7 (812) 812-12-12</a>
+  
+          <p class="page-footer__phone"><a href="tel:+78128121212">Тел.: +7 (812) 812-12-12</a></p>
         </div>
   
         <div class="page-footer__row">
-          <ul class="page-footer__social social-list">
-            <li class="social-list__item">
-              <a class="social-list__link social-list__link_facebook" href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Facebook</span></a>
+          <ul class="social-list">
+            <li class="social-list__item social-list__facebook">
+              <a href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Facebook</span></a>
             </li>
-            <li class="social-list__item">
-              <a class="social-list__link social-list__link_instagram" href="https://www.instagram.com/htmlacademy/"><span class="visually-hidden">Instagram</span></a>
+            <li class="social-list__item social-list__instagram">
+              <a href="https://www.instagram.com/htmlacademy/"><span class="visually-hidden">Instagram</span></a>
             </li>
-            <li class="social-list__item">
-              <a class="social-list__link social-list__link_twitter" href="https://twitter.com/htmlacademy_ru"><span class="visually-hidden">Twitter</span></a>
+            <li class="social-list__item social-list__twitter">
+              <a href="https://twitter.com/htmlacademy_ru"><span class="visually-hidden">Twitter</span></a>
             </li>
           </ul>
-    
-          <p><span class="visually-hidden">Сайт сделан в </span><a href="https://htmlacademy.ru/"><span class="visually-hidden">.HTML Academy</span></p>
-        </div>   
+  
+          <a class="made-in" href="https://htmlacademy.ru/"><img src="images/html-academy.svg" alt="Сделано в .HTML Academy" width="115" height="33"></a>
+        </div>
       </div>
     </footer>
   </body>
