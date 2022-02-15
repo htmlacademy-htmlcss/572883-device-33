@@ -68,7 +68,7 @@ body{
   padding-top: 18px;
   padding-right: 60px;
   padding-left: 60px;
-  padding-bottom: 22px;
+  padding-bottom: 23px;
 }
 .page-header a{
   color: inherit;
@@ -206,10 +206,9 @@ body{
   text-transform: uppercase;
 }
 .main-menu__item:not(:last-child){
-  margin-right: 50px;
+  margin-right: 45px;
 }
 .main-menu__item a{
-  padding: 15px 0;
   display: block;
   text-decoration: none;
 }
@@ -252,6 +251,7 @@ body{
 }
 .page-footer__phone{
   text-align: right;
+  margin: 0;
   margin-left: auto;
 }
 
@@ -327,11 +327,12 @@ body{
 .home-slider__thumb{
   display: flex;
   width: 560px;
+  margin-top: -38px;
   margin-right: auto;
 }
 .home-slider__column{
   width: 560px;
-  padding-top: 107px;
+  padding-top: 83px;
   padding-bottom: 38px;
 }
 .home-slider__slogan{
@@ -358,7 +359,9 @@ body{
   width: 220px;
   margin-right: auto;
 }
-
+.home-slider__specifications{
+  border-collapse: collapse;
+}
 .home-slider__specifications th{
   padding: 0;
   font-size: 16px;
@@ -374,6 +377,9 @@ body{
 .home-slider__specifications th:not(:last-child),
 .home-slider__specifications td:not(:last-child) {
   padding-right: 20px;
+}
+.home-slider__specifications tr:not(:last-child) td{
+  padding-bottom: 12px;
 }
 
 /* Главная > Категории */
@@ -403,13 +409,14 @@ body{
   height: 100%;
   background: #FFE17F;
   padding-top: 193px;
+  padding-bottom: 12px;
 }
 
 /* Главная > Услуги */
 
 .services{
   background-color: #f0f0f0;
-  padding-bottom: 70px;
+  padding-bottom: 72px;
 }
 .services__container{
   display: flex;
@@ -576,6 +583,11 @@ body{
 }
 .subscription__title{
   margin-top: 0;
+  margin-bottom: 0;
+}
+.subscription__column p{
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 .subscription__full{
   width: 100%;
@@ -665,7 +677,7 @@ body{
 
 .catalog-filter{
   grid-row: 1 / 3;
-  padding: 0 60px;
+  padding: 25px 60px 0;
   color: #000000;
   font-size: 16px;
   line-height: 19px;
@@ -673,9 +685,8 @@ body{
 .catalog-filter__title{
   display: flex;
   align-items: center;
-  height: 70px;
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 60px;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
   font-size: 16px;
@@ -714,9 +725,8 @@ body{
 
 .catalog-sort{
   display: flex;
-  height: 70px;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px 40px;
   color: #000000;
   font-size: 16px;
   line-height: 19px;
@@ -805,7 +815,7 @@ body{
   color: #000000;
 }
 .product-card__thumb{
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 .product-card__price{
   line-height: 21px;
