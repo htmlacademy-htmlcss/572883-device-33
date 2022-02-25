@@ -18,7 +18,10 @@
           
           <div class="page-header__row">
             <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
-              <input class="header-search__input"  type="text" name="header-search" placeholder="Поиск по сайту" required>
+              <label class="header-search__field">
+                <span class="visually-hidden">Поиск по сайту</span>
+                <input type="text" name="header-search" placeholder="Поиск по сайту" required>
+              </label>
               <button class="header-search__submit" type="submit">Найти</button>
             </form>
     
@@ -34,6 +37,16 @@
               </li>
               <li class="user-menu__item menu-cart">
                 <a class="menu-cart__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+              
+                <div class="popover-cart">
+                  <ul class="popover-cart__list">
+                    <li class="popover-cart__item">
+                      <img src="images/products/product-1-small.jpg" alt="Любительская селфи-палка">
+                      Любительская селфи-палка
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -184,7 +197,7 @@
     <footer class="page-footer">
       <div class="container">
         <div class="page-footer__row">
-          <a class="logo page-footer__logo" href="index.html">
+          <a class="logo" href="index.html">
             <img src="images/logo-footer.svg" width="145" height="36" alt="Логотип интернет-магазина Девайс.">
           </a>
         </div>
