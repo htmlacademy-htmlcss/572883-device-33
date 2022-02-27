@@ -20,20 +20,48 @@
             <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
               <label class="header-search__field">
                 <span class="visually-hidden">Поиск по сайту</span>
-                <input type="text" name="header-search" placeholder="Поиск по сайту" required>
+                <input class="header-search__input" type="text" name="header-search" placeholder="Поиск по сайту" required>
               </label>
               <button class="header-search__submit" type="submit">Найти</button>
             </form>
   
             <ul class="user-menu">
               <li class="user-menu__item user-menu__login">
-                <a href="#">Войти</a>
+                <a class="user-menu__link" href="#">Войти</a>
               </li>
               <li class="user-menu__item user-menu__compare">
-                <a href="#">Сравнить</a>
+                <a class="user-menu__link" href="#">Сравнить</a>
               </li>
               <li class="user-menu__item menu-cart">
-                <a class="menu-cart__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+                <a class="user-menu__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+              
+                <div class="popover-cart">
+                  <ul class="popover-cart__list">
+                    <li class="popover-cart__item">
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-1-small.jpg" alt="Любительская селфи-палка" width="39" height="43">
+                        Любительская селфи-палка
+                      </a>
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                    <li class="popover-cart__item">
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-2-small.jpg" alt="Профессиональная селфи-палка" width="39" height="43">
+                        Профессиональная селфи-палка
+                      </a>
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                  </ul>
+
+                  <ul class="popover-cart__total">
+                    <li>Товаров: 2</li>
+                    <li>Сумма: 2000 ₽</li>
+                  </ul>
+
+                  <div class="popover-cart__button-wrap">
+                    <a class="popover-cart__button" href="#">Открыть корзину</a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -42,20 +70,26 @@
             <div class="catalog-menu">
               <a class="catalog-menu__toggler" href="catalog.html">Каталог товаров</a>
     
-              <ul class="catalog-menu__list" hidden>
-                <li class="catalog-menu__item"><a href="#">Виртуальная реальность</a></li>
-                <li class="catalog-menu__item"><a href="#">Моноподы для селфи</a></li>
-                <li class="catalog-menu__item"><a href="#">Экшн-камеры</a></li>
-                <li class="catalog-menu__item"><a href="#">Фитнес-браслеты</a></li>
-                <li class="catalog-menu__item"><a href="#">Умные часы</a></li>
-                <li class="catalog-menu__item"><a href="#">Квадрокоптеры</a></li>
-              </ul>
+              <div class="catalog-popover">
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Виртуальная реальность</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Моноподы для селфи</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Экшн-камеры</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Фитнес-браслеты</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Умные часы</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Квадрокоптеры</a></li>
+                </ul>
+              </div>
             </div>
   
             <ul class="main-menu page-header__main-menu">
-              <li class="main-menu__item"><a href="#">Доставка</a></li>
-              <li class="main-menu__item"><a href="#">Гарантия</a></li>
-              <li class="main-menu__item"><a href="#">Контакты</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Доставка</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Гарантия</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
             </ul>
           </div>
         </nav>
