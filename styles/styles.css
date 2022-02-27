@@ -886,8 +886,12 @@ body{
   padding-bottom: 0;
 }
 
+.home-slider{
+  counter-reset: slider-counter;
+}
 .home-slider__container{
   position: relative;
+  z-index: 1;
   background-color: transparent;
   background-image: linear-gradient(#ffe17f, #ffe17f);
   background-position: top;
@@ -896,6 +900,7 @@ body{
 }
 .home-slider__item{
   display: flex;
+  position: relative;
 }
 .home-slider__item_hidden{
   display: none;
@@ -907,22 +912,9 @@ body{
   margin-right: auto;
 }
 .home-slider__column{
-  position: relative;
   width: 560px;
   padding-top: 107px;
   padding-bottom: 38px;
-  z-index: 1;
-}
-.home-slider__column::after{
-  content: '01';
-  position: absolute;
-  top: 15px;
-  right: 49px;
-  font-weight: 700;
-  line-height: 135px;
-  font-size: 180px;
-  color: #ffffff;
-  z-index: -1;
 }
 .home-slider__slogan{
   margin-top: 0;
@@ -968,6 +960,20 @@ body{
 }
 .home-slider__specifications tr:not(:last-child) td{
   padding-bottom: 12px;
+}
+
+/* Главная > Слайдер > Счётчик */
+
+.home-slider__count-wrap{
+  position: absolute;
+  margin: 0;
+  top: 15px;
+  right: 49px;
+  font-weight: 700;
+  line-height: 135px;
+  font-size: 180px;
+  color: #ffffff;
+  z-index: -1;
 }
 
 /* Главная > Слайдер > Навигация */
