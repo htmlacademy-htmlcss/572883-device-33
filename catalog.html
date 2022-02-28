@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Девайс</title>
+    <title>Каталог | HTML Academy: Девайс</title>
 
     <link rel="stylesheet" href="styles/styles.css">
   </head>
@@ -11,7 +11,7 @@
       <div class="container">
         <nav class="page-header__nav">
           <div class="page-header__row">
-            <a  class="logo" href="index.html">
+            <a class="logo" href="index.html">
               <img src="images/logo.svg" width="145" height="37" alt="Логотип интернет-магазина Девайс.">
             </a>
           </div>
@@ -20,32 +20,44 @@
             <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
               <label class="header-search__field">
                 <span class="visually-hidden">Поиск по сайту</span>
-                <input type="text" name="header-search" placeholder="Поиск по сайту" required>
+                <input class="header-search__input" type="text" name="header-search" placeholder="Поиск по сайту" required>
               </label>
               <button class="header-search__submit" type="submit">Найти</button>
             </form>
-    
+  
             <ul class="user-menu">
-              <li class="user-menu__item user-menu__user">
-                <a href="#">Коля Петухов</a>
-              </li>
-              <li class="user-menu__item user-menu__logoff">
-                <a href="#">Выйти</a>
-              </li>
-              <li class="user-menu__item user-menu__compare">
-                <a href="#">Сравнить</a>
-              </li>
+              <li class="user-menu__item user-menu__user"><a class="user-menu__link" href="#">Коля Петухов</a></li>
+              <li class="user-menu__item user-menu__logoff"><a class="user-menu__link" href="#">Выйти</a></li>
+              <li class="user-menu__item user-menu__compare"><a class="user-menu__link" href="#">Сравнить</a></li>
               <li class="user-menu__item menu-cart">
-                <a class="menu-cart__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+                <a class="user-menu__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
               
                 <div class="popover-cart">
                   <ul class="popover-cart__list">
                     <li class="popover-cart__item">
-                      <img src="images/products/product-1-small.jpg" alt="Любительская селфи-палка">
-                      Любительская селфи-палка
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-1-small.jpg" alt="Любительская селфи-палка" width="39" height="43">
+                        Любительская селфи-палка
+                      </a>
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                    <li class="popover-cart__item">
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-2-small.jpg" alt="Профессиональная селфи-палка" width="39" height="43">
+                        Профессиональная селфи-палка
+                      </a>
                       <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
                     </li>
                   </ul>
+
+                  <ul class="popover-cart__total">
+                    <li>Товаров: 2</li>
+                    <li>Сумма: 2000 ₽</li>
+                  </ul>
+
+                  <div class="popover-cart__button-wrap">
+                    <a class="popover-cart__button" href="#">Открыть корзину</a>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -55,20 +67,26 @@
             <div class="catalog-menu">
               <a class="catalog-menu__toggler" href="catalog.html">Каталог товаров</a>
     
-              <ul class="catalog-menu__list" hidden>
-                <li class="catalog-menu__item"><a href="#">Виртуальная реальность</a></li>
-                <li class="catalog-menu__item"><a href="#">Моноподы для селфи</a></li>
-                <li class="catalog-menu__item"><a href="#">Экшн-камеры</a></li>
-                <li class="catalog-menu__item"><a href="#">Фитнес-браслеты</a></li>
-                <li class="catalog-menu__item"><a href="#">Умные часы</a></li>
-                <li class="catalog-menu__item"><a href="#">Квадрокоптеры</a></li>
-              </ul>
+              <div class="catalog-popover">
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Виртуальная реальность</a></li>
+                  <li class="catalog-popover__item catalog-popover__item_current"><a class="catalog-popover__link" href="#">Моноподы для селфи</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Экшн-камеры</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Фитнес-браслеты</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Умные часы</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Квадрокоптеры</a></li>
+                </ul>
+              </div>
             </div>
-    
+  
             <ul class="main-menu page-header__main-menu">
-              <li class="main-menu__item"><a href="#">Доставка</a></li>
-              <li class="main-menu__item"><a href="#">Гарантия</a></li>
-              <li class="main-menu__item"><a href="#">Контакты</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Доставка</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Гарантия</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
             </ul>
           </div>
         </nav>
@@ -97,23 +115,39 @@
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Стоимость</legend>
+
+              <div class="range" >
+                <div class="range__bar" style="left: 0px; width: 119px;" aria-hidden="true">
+                  <button class="range__toggle range__min" type="button" tabindex="-1">
+                    <span class="visually-hidden">Изменить минимальную цену</span>
+                  </button>
+                  <button class="range__toggle range__max" type="button" tabindex="-1">
+                    <span class="visually-hidden">Изменить максимальную цену</span>
+                  </button>
+                </div>
+
+                <div class="range-value" style="left: 0px; width: 119px;">
+                  <label class="range-value__item range-value__min">от <input class="range-value__input" style="width: 10px;" type="number" value="0" name="min-price" min="0" placeholder="0"></label>
+                  <label class="range-value__item range-value__max">до <input class="range-value__input" style="width: 40px;" type="number" value="5000" name="max-price" min="0" placeholder="0"></label>
+                </div>
+              </div>
             </fieldset>
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Цвет</legend>
   
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-black">Чёрный</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-white">Белый</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-blue">Синий</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-red">Красный</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-pink">Розовый</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-black" checked><span class="catalog-filter__pseudocheckbox"></span>Чёрный</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-white" checked><span class="catalog-filter__pseudocheckbox"></span>Белый</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-blue"><span class="catalog-filter__pseudocheckbox"></span>Синий</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-red"><span class="catalog-filter__pseudocheckbox"></span>Красный</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-pink"><span class="catalog-filter__pseudocheckbox"></span>Розовый</label>
             </fieldset>
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Bluetooth</legend>
   
-              <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="yes">Есть</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="no">Нет</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__radio visually-hidden" type="radio" name="bluetooth" value="yes"><span class="catalog-filter__pseudoradio"></span>Есть</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__radio visually-hidden" type="radio" name="bluetooth" value="no"><span class="catalog-filter__pseudoradio"></span>Нет</label>
             </fieldset>
   
             <button class="button catalog-filter__submit" type="submit">Показать</button>

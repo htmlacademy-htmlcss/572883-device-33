@@ -20,20 +20,44 @@
             <form class="header-search" action="https://echo.htmlacademy.ru/" method="post">
               <label class="header-search__field">
                 <span class="visually-hidden">Поиск по сайту</span>
-                <input type="text" name="header-search" placeholder="Поиск по сайту" required>
+                <input class="header-search__input" type="text" name="header-search" placeholder="Поиск по сайту" required>
               </label>
               <button class="header-search__submit" type="submit">Найти</button>
             </form>
   
             <ul class="user-menu">
-              <li class="user-menu__item user-menu__login">
-                <a href="#">Войти</a>
-              </li>
-              <li class="user-menu__item user-menu__compare">
-                <a href="#">Сравнить</a>
-              </li>
+              <li class="user-menu__item user-menu__login"><a class="user-menu__link" href="#">Войти</a></li>
+              <li class="user-menu__item user-menu__compare"><a class="user-menu__link" href="#">Сравнить</a></li>
               <li class="user-menu__item menu-cart">
-                <a class="menu-cart__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+                <a class="user-menu__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
+              
+                <div class="popover-cart">
+                  <ul class="popover-cart__list">
+                    <li class="popover-cart__item">
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-1-small.jpg" alt="Любительская селфи-палка" width="39" height="43">
+                        Любительская селфи-палка
+                      </a>
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                    <li class="popover-cart__item">
+                      <a class="popover-cart__link" href="#">
+                        <img class="popover-cart__thamb" src="images/products/product-2-small.jpg" alt="Профессиональная селфи-палка" width="39" height="43">
+                        Профессиональная селфи-палка
+                      </a>
+                      <button class="popover-cart__delete" type="button"><span class="visually-hidden">Удалить товар из корзины</span></button>
+                    </li>
+                  </ul>
+
+                  <ul class="popover-cart__total">
+                    <li>Товаров: 2</li>
+                    <li>Сумма: 2000 ₽</li>
+                  </ul>
+
+                  <div class="popover-cart__button-wrap">
+                    <a class="popover-cart__button" href="#">Открыть корзину</a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -42,20 +66,26 @@
             <div class="catalog-menu">
               <a class="catalog-menu__toggler" href="catalog.html">Каталог товаров</a>
     
-              <ul class="catalog-menu__list" hidden>
-                <li class="catalog-menu__item"><a href="#">Виртуальная реальность</a></li>
-                <li class="catalog-menu__item"><a href="#">Моноподы для селфи</a></li>
-                <li class="catalog-menu__item"><a href="#">Экшн-камеры</a></li>
-                <li class="catalog-menu__item"><a href="#">Фитнес-браслеты</a></li>
-                <li class="catalog-menu__item"><a href="#">Умные часы</a></li>
-                <li class="catalog-menu__item"><a href="#">Квадрокоптеры</a></li>
-              </ul>
+              <div class="catalog-popover">
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Виртуальная реальность</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Моноподы для селфи</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Экшн-камеры</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Фитнес-браслеты</a></li>
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Умные часы</a></li>
+                </ul>
+                <ul class="catalog-popover__list">
+                  <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Квадрокоптеры</a></li>
+                </ul>
+              </div>
             </div>
   
             <ul class="main-menu page-header__main-menu">
-              <li class="main-menu__item"><a href="#">Доставка</a></li>
-              <li class="main-menu__item"><a href="#">Гарантия</a></li>
-              <li class="main-menu__item"><a href="#">Контакты</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Доставка</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Гарантия</a></li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
             </ul>
           </div>
         </nav>
@@ -102,6 +132,7 @@
                   <tr>
                     <td>800 м</td>
                     <td>50 м</td>
+                  </tr>
                   <tr>
                     <th>Дальность полёта</th>
                     <th>Радиус поражения</th>
@@ -118,18 +149,18 @@
               </div>
     
               <div class="home-slider__column">
-                <p class="home-slider__slogan">Худеем правильно!</p>
+                <p class="home-slider__slogan">Худеем<br>правильно!</p>
     
-                <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+                <p class="home-slider__description">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
     
                 <div class="home-slider__nav-wrap">
                   <a href="#" class="button home-slider__more">Подробнее</a>
     
                   <nav class="slider-dots">
-                    <button class="slider-dots__item slider-dots__item_current" type="button">
+                    <button class="slider-dots__item" type="button">
                       <span class="visually-hidden">1 слайд</span>
                     </button>
-                    <button class="slider-dots__item" type="button">
+                    <button class="slider-dots__item slider-dots__item_current" type="button">
                       <span class="visually-hidden">2 слайд</span>
                     </button>
                     <button class="slider-dots__item" type="button">
@@ -140,10 +171,10 @@
     
                 <table class="home-slider__specifications">
                   <tr>
-                    <th>Без подзарядки</th>
+                    <td>48 часов</td>
                   </tr>
                   <tr>
-                    <td>48 часов</td>
+                    <th>Без подзарядки</th>
                   </tr>
                 </table>
               </div>
@@ -159,19 +190,19 @@
               <div class="home-slider__column">
                 <p class="home-slider__slogan">Делай селфи, как Бен Стиллер!</p>
     
-                <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
+                <p class="home-slider__description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
     
                 <div class="home-slider__nav-wrap">
                   <a href="#" class="button home-slider__more">Подробнее</a>
     
                   <nav class="slider-dots">
-                    <button class="slider-dots__item slider-dots__item_current" type="button">
+                    <button class="slider-dots__item" type="button">
                       <span class="visually-hidden">1 слайд</span>
                     </button>
                     <button class="slider-dots__item" type="button">
                       <span class="visually-hidden">2 слайд</span>
                     </button>
-                    <button class="slider-dots__item" type="button">
+                    <button class="slider-dots__item slider-dots__item_current" type="button">
                       <span class="visually-hidden">3 слайд</span>
                     </button>
                   </nav>
@@ -179,19 +210,21 @@
     
                 <table class="home-slider__specifications">
                   <tr>
-                    <th>Длинна палки</th>
-                    <th>Вес палки</th>
-                    <th>Материал</th>
-                  </tr>
-                  <tr>
                     <td>8,5 м</td>
                     <td>5 кг</td>
                     <td>Карбон</td>
+                  </tr>
+                  <tr>
+                    <th>Длинна палки</th>
+                    <th>Вес палки</th>
+                    <th>Материал</th>
                   </tr>
                 </table>
               </div>
             </article>
           </div>
+
+          <p class="home-slider__count-wrap"><span class="visually-hidden">Активный слайд </span><span class="home-slider__count">01</span></p>
 
           <div class="slider-nav">
             <button class="slider-nav__button slider-nav__button_prev" type="button">
@@ -235,17 +268,17 @@
           </nav>
   
           <ul class="services__list">
-            <li class="services__item services__item_delivery">
+            <li class="services__item services__item_delivery services__item_active">
               <h3 class="services__subtitle main-title">Доставка</h3>
   
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
             </li>
-            <li class="services__item services__item_warranty" hidden>
+            <li class="services__item services__item_warranty">
               <h3 class="services__subtitle main-title">Гарантия</h3>
   
               <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
             </li>
-            <li class="services__item services__item_credit" hidden>
+            <li class="services__item services__item_credit">
               <h3 class="services__subtitle main-title">Кредит</h3>
   
               <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
@@ -261,7 +294,9 @@
           <div class="delivery__inner">
             <a class="delivery__button" href="#">Доставим редкий товар под заказ</a>
 
-            <button class="delivery__information" type="button"><span class="visually-hidden">Дополнительная информация</span></button>
+            <a class="delivery__information" href="#">
+              <span class="visually-hidden">Дополнительная информация</span>
+            </a>
           </div>
         </div>
       </section>
@@ -319,7 +354,7 @@
             <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="subscription-form__field">
                 <span class="visually-hidden">Введите ваш e-mail</span>
-                <input type="email" name="subscription-form_e-mail" placeholder="Ваш e-mail" required>
+                <input class="subscription-form__input" type="email" name="subscription-form_e-mail" placeholder="Ваш e-mail" required>
               </label>
               <button class="subscription-form__submit" type="submit">Подписаться</button>
               <p class="subscription__offer">Это бесплатно</p>
@@ -328,6 +363,58 @@
         </div>
       </section>
     </main>
+
+    <div class="modal-container">
+      <section class="modal">
+        <h2 class="main-title modal__title">Доставка под заказ</h2>
+
+        <form class="order-form" action="https://echo.htmlacademy.ru/" method="post">
+          <div class="order-form__item">
+            <label class="order-form__label" for="order-form__name">Ваше имя:</label>
+            <input class="order-form__input order-form__name" id="order-form__name" type="text" name="order-form__name" placeholder="Введите имя" required>
+            <p class="order-form__warning">Добавьте имя</p>
+          </div>
+
+          <div class="order-form__item">
+            <label class="order-form__label" for="order-form__email">Ваш e-mail:</label>
+            <input class="order-form__input order-form__email" id="order-form__email" type="email" name="order-form__email" placeholder="Введите e-mail" required>
+            <p class="order-form__warning">Добавьте e-mail</p>
+          </div>
+          
+          <div class="order-form__item">
+            <label class="order-form__label" for="order-form__message">Что нужно привезти:</label>
+            <input class="order-form__input" id="order-form__message" type="text" name="order-form__message" placeholder="В свободной форме" required >
+            <p class="order-form__warning">Введите сообщение</p>
+          </div>
+
+          <div class="order-form__item count-field">
+            <label class="order-form__label" for="order-form__count">Количество:</label>
+
+            <div class="form-information">
+              <button class="form-information__button" type="button"><span class="visually-hidden">Дополнительная информация</span></button>
+
+              <p class="form-information__tooltip">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</p>
+            </div>
+
+            <div class="count-field__inner">
+              <button class="count-field__button count-field__minus" type="button"><span class="visually-hidden">Увеличить на один</span></button>
+              
+              <input class="order-form__input count-field__input" id="order-form__count" type="number" name="order-form__count" value="1" min="1" placeholder="1">
+
+              <button class="count-field__button count-field__plus" type="button"><span class="visually-hidden">Уменьшить на один</span></button>
+              
+              <p class="order-form__warning">Введите число</p>
+            </div>
+          </div>
+
+          <button class="button order-form__button" type="submit">Отправить</button>
+        </form>
+
+        <button class="modal__close">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+      </section>
+    </div>
 
     <footer class="page-footer">
       <div class="container">
