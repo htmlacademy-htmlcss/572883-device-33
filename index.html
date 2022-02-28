@@ -35,7 +35,7 @@
               <li class="user-menu__item menu-cart">
                 <a class="user-menu__link" href="#">Корзина<span class="visually-hidden"> Выбранно товаров: </span><span class="menu-cart__count">2</span></a>
               
-                <div class="popover-cart" hidden>
+                <div class="popover-cart">
                   <ul class="popover-cart__list">
                     <li class="popover-cart__item">
                       <a class="popover-cart__link" href="#">
@@ -70,7 +70,7 @@
             <div class="catalog-menu">
               <a class="catalog-menu__toggler" href="catalog.html">Каталог товаров</a>
     
-              <div class="catalog-popover" hidden>
+              <div class="catalog-popover">
                 <ul class="catalog-popover__list">
                   <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Виртуальная реальность</a></li>
                   <li class="catalog-popover__item"><a class="catalog-popover__link" href="#">Моноподы для селфи</a></li>
@@ -387,7 +387,7 @@
           
           <div class="order-form__item">
             <label class="order-form__label" for="order-form__message">Что нужно привезти:</label>
-            <input class="order-form__input" id="order-form__message" type="text" name="order-form__message" placeholder="В свободной форме"required >
+            <input class="order-form__input" id="order-form__message" type="text" name="order-form__message" placeholder="В свободной форме" required >
             <p class="order-form__warning">Введите сообщение</p>
           </div>
 
@@ -403,7 +403,7 @@
             <div class="count-field__inner">
               <button class="count-field__button count-field__minus" type="button"><span class="visually-hidden">Увеличить на один</span></button>
               
-              <input class="order-form__input count-field__input" id="order-form__count" type="number" name="order-form__count" value="1" min="1" placeholder="1" required>
+              <input class="order-form__input count-field__input" id="order-form__count" type="number" name="order-form__count" value="1" min="1" placeholder="1">
 
               <button class="count-field__button count-field__plus" type="button"><span class="visually-hidden">Уменьшить на один</span></button>
               

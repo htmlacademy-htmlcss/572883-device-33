@@ -121,23 +121,35 @@
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Стоимость</legend>
+
+              <div class="range" >
+                <div class="range__bar" style="left: 0px; width: 119px;" aria-hidden="true">
+                  <button class="range__toggle range__min" type="button" tabindex="-1"></button>
+                  <button class="range__toggle range__max" type="button" tabindex="-1"></button>
+                </div>
+
+                <div class="range-value" style="left: 0px; width: 119px;">
+                  <label class="range-value__item range-value__min">от <input class="range-value__input" style="width: 10px;" type="number" value="0" name="min-price" min="0" placeholder="0"></label>
+                  <label class="range-value__item range-value__max">до <input class="range-value__input" style="width: 40px;" type="number" value="5000" name="max-price" min="0" placeholder="0"></label>
+                </div>
+              </div>
             </fieldset>
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Цвет</legend>
   
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-black">Чёрный</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-white">Белый</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-blue">Синий</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-red">Красный</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__checkbox" type="checkbox" name="color-pink">Розовый</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-black" checked><span class="catalog-filter__pseudocheckbox"></span>Чёрный</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-white" checked><span class="catalog-filter__pseudocheckbox"></span>Белый</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-blue"><span class="catalog-filter__pseudocheckbox"></span>Синий</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-red"><span class="catalog-filter__pseudocheckbox"></span>Красный</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__checkbox visually-hidden" type="checkbox" name="color-pink"><span class="catalog-filter__pseudocheckbox"></span>Розовый</label>
             </fieldset>
   
             <fieldset class="catalog-filter__group">
               <legend class="catalog-filter__subtitle">Bluetooth</legend>
   
-              <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="yes">Есть</label>
-              <label class="catalog-filter__item"><input class="catalog-filter__radio" type="radio" name="bluetooth" value="no">Нет</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__radio visually-hidden" type="radio" name="bluetooth" value="yes"><span class="catalog-filter__pseudoradio"></span>Есть</label>
+              <label class="catalog-filter__item"><input class="catalog-filter__radio visually-hidden" type="radio" name="bluetooth" value="no"><span class="catalog-filter__pseudoradio"></span>Нет</label>
             </fieldset>
   
             <button class="button catalog-filter__submit" type="submit">Показать</button>
