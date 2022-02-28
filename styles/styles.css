@@ -296,10 +296,14 @@ body{
 /* Шапка сайта > Открытие поповера корзины */
 
 .popover-cart{
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s ease-out, opacity 0.25s ease-out;
 }
-.menu-cart_open .popover-cart{
-  display: block;
+.menu-cart_open .popover-cart,
+.menu-cart:hover .popover-cart{
+  visibility: visible;
+  opacity: 1;
 }
 
 .popover-cart::after{
@@ -311,6 +315,14 @@ body{
   border-bottom: 6px solid #000000;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
+}
+.popover-cart::before{ /* Чтобы не пропадал hover при движении курсора */
+  content: '';  
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 6px;
 }
 .popover-cart__list{
   padding: 0;
@@ -500,13 +512,16 @@ body{
 }
 
 .catalog-popover{
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s ease-out, opacity 0.25s ease-out;
 }
 .catalog-menu_open .catalog-menu__toggler::after{
   background-image: url('../images/interface/minus.svg');
 }
 .catalog-menu_open .catalog-popover{
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .catalog-popover__list{
@@ -1259,6 +1274,10 @@ body{
   padding: 72px 282px 72px 0;
   background-repeat: no-repeat;
   background-position: top 76px right 63px;
+  display: none;
+}
+.services__item_active{
+  display: block;
 }
 .services__item p{
   margin-top: 0;
@@ -1336,6 +1355,7 @@ body{
 }
 .delivery__information{
   position: absolute;
+  z-index: 1;
   right: 42px;
   top: 50%;
   transform: translateY(-50%);
@@ -1348,7 +1368,6 @@ body{
   background-color: rgba(220, 220, 220, 0.5);
   border: none;
   border-radius: 50%;
-  cursor: pointer;
 }
 .delivery__information::after{
   content: '';
@@ -1375,12 +1394,6 @@ body{
 .delivery__information:focus-visible{
   outline-offset: 2px;
   outline: 2px solid #af4fff;
-}
-.delivery__button:hover + .delivery__information::after{
-  opacity: 1;
-}
-.delivery__button:active + .delivery__information{
-  opacity: 0.3;
 }
 
 /* Главная > О нас */
@@ -1514,7 +1527,6 @@ body{
   outline: 2px solid #af4fff;
 }
 
-
 /* Главная > Подписка */
 
 .subscription{
@@ -1546,7 +1558,7 @@ body{
   display: flex;
   align-items: center;
 }
-.subscription-form__field input{
+.subscription-form__input{
   width: 557px;
   padding: 13px 16px 11px;
   background-color: transparent;
@@ -1555,21 +1567,24 @@ body{
   font-family: inherit;
   font-size: 18px;
   line-height: 30px;
-  transition: backgroud-color 0.25s ease-out;
+  transition: background-color 0.25s ease-out;
 }
-.subscription-form__field input::placeholder{
+.subscription-form__input::placeholder{
   opacity: 0.5;
   color: inherit;
 }
-.subscription-form__field input:hover{
+.subscription-form__input:hover{
   background-color: #dcdcdc;
 }
-.subscription-form__field input:focus{
+.subscription-form__input:focus{
   background-color: #dcdcdc;
   outline: none;
 }
-.subscription-form__field input:disabled{
+.subscription-form__input:disabled{
   opacity: 0.1;
+}
+.subscription-form__input:focus:invalid{
+  border-color: #ff3d3d;
 }
 
 .subscription-form__submit{
@@ -1984,4 +1999,320 @@ body{
 .pagination__item_curent .pagination__link{
   opacity: 0.6;
   cursor: default;
+}
+
+/* Модальное окно */
+
+.modal-container{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 60px;
+  background: rgba(240, 240, 240, 0.9);
+  overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s ease-out, opacity 0.25s ease-out;
+}
+.modal-container_open{
+  visibility: visible;
+  opacity: 1;
+}
+.modal{
+  position: relative;
+  width: 920px;
+  padding: 62px 70px;
+  background-color: #ffffff;
+  border: 10px solid #000000;
+  margin: auto;
+}
+.modal__title{
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+.order-form{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.order-form__item{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 360px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin-bottom: 42px;
+}
+.order-form__item:nth-child(2n + 1){
+  margin-right: 40px;
+}
+.order-form__label{
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 14px;
+  color: #000000;
+}
+.order-form__input{
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  border: none;
+  background-color: #f0f0f0;
+  font-family: inherit;
+  transition: background-color 0.25s ease-out;
+}
+.order-form__input::placeholder{
+  color: inherit;
+  opacity: 0.3;
+}
+.order-form__input:hover{
+  background-color: #dcdcdc;
+}
+.order-form__input:focus{
+  z-index: 1;
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.order-form__input:focus:not(:focus-visible) {
+  outline: 0;
+}
+.order-form__input:focus-visible{
+  z-index: 1;
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.order-form__input:disabled{
+  opacity: 0.1;
+}
+.order-form__input:not(:focus):invalid{
+  box-shadow: inset 0 0 0 2px #ff3d3d;
+}
+
+.order-form__warning{
+  display: none;
+  margin: 0;
+  position: absolute;
+  bottom: -20px;
+  color: #000000;
+  font-size: 14px;
+  line-height: 20px;
+}
+.order-form__input:not(:focus):invalid ~ .order-form__warning{
+  display: block;
+}
+
+.order-form__name{
+  background-image: url('../images/interface/user-grey.svg');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 13px 12px;
+}
+.order-form__email{
+  background-image: url('../images/interface/email-grey.svg');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 15px 12px;
+}
+
+/* Модальное окно > Поле для ввода числа */
+
+.count-field{
+  width: 180px;
+  flex-grow: 0;
+}
+.count-field__inner{
+  width: 100%;
+}
+.count-field__inner{
+  display: flex;
+}
+.count-field__input{
+  position: relative;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.count-field__input {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+.count-field__input::-webkit-outer-spin-button,
+.count-field__input::-webkit-inner-spin-button {
+	display: none;
+}
+
+.count-field__button{
+  position: relative;
+  width: 60px;
+  padding: 0;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background-color 0.25s ease-out;
+}
+.count-field__button::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 17px;
+  transition: opacity 0.25s ease-out;
+}
+.count-field__minus::after{
+  background-image: url('../images/interface/minus.svg');
+}
+.count-field__plus::after{
+  background-image: url('../images/interface/plus.svg');
+}
+.count-field__button:hover{
+  background-color: #ebebeb;
+}
+.count-field__button:hover::after{
+  opacity: 0.6;
+}
+.count-field__button:active{
+  background-color: #f0f0f0;
+}
+.count-field__button:active::after{
+  opacity: 0.3;
+}
+
+.count-field__button:focus{
+  z-index: 1;
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.count-field__button:focus:not(:focus-visible) {
+  outline: 0;
+}
+.count-field__button:focus-visible{
+  z-index: 1;
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+
+/* Модальное окно > Дополнительная информация */
+
+.form-information{
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 20px;
+  margin-left: 8px;
+}
+.form-information__button{
+  width: 26px;
+  height: 26px;
+  background-color: #ffe17f;
+  border-radius: 50%;
+  border: none;
+  background-image: url('../images/interface/information.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2px 13px;
+}
+.form-information__button:focus{
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.form-information__button:focus:not(:focus-visible) {
+  outline: 0;
+}
+.form-information__button:focus-visible{
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.form-information__tooltip{
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -34px;
+  z-index: 1;
+  width: 200px;
+  padding: 20px;
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.25s ease-out, opacity 0.25s ease-out;
+}
+.form-information__tooltip::after{
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 40px;
+  border-bottom: 6px solid #000000;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+}
+.form-information__tooltip::before{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+.form-information:hover .form-information__tooltip,
+.form-information__button:focus + .form-information__tooltip{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Модальное окно > Кнопка Отправить */
+
+.order-form__button{
+  padding-left: 31px;
+  padding-right: 31px;
+}
+
+/* Модальное окно > Кнопка закрыть */
+
+.modal__close{
+  position: absolute;
+  top: 74px;
+  right: 70px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url('../images/interface/cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+.modal__close:hover{
+  opacity: 0.6;
+}
+.modal__close:active{
+  opacity: 0.3;
+}
+.modal__close:focus{
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
+}
+.modal__close:focus:not(:focus-visible) {
+  outline: 0;
+}
+.modal__close:focus-visible{
+  outline-offset: 2px;
+  outline: 2px solid #af4fff;
 }
