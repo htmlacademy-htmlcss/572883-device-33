@@ -98,7 +98,8 @@ img {
 
 .logo {
   display: flex;
-  position: relative;
+  max-width: 145px;
+  max-height: 37px;
   transition: opacity 0.25s ease-out;
 }
 
@@ -418,8 +419,10 @@ img {
 }
 
 .popover-cart__thamb {
-  margin-right: 20px;
   flex-shrink: 0;
+  margin-right: 20px;
+  width: 39px;
+  height: 43px;
   object-fit: cover;
   object-position: center;
 }
@@ -927,6 +930,8 @@ img {
   display: flex;
   margin-left: auto;
   margin-top: 5px;
+  max-width: 115px;
+  max-height: 33px;
 }
 
 .made-in svg {
@@ -2463,6 +2468,8 @@ img {
 }
 
 .product-card__thumb {
+  width: 360px;
+  height: 380px;
   margin-bottom: 32px;
 }
 
